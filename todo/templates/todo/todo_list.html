@@ -7,5 +7,19 @@
 </head>
 <body>
     <h1>This is my todo list!</h1>
+
+    <table>
+        {% for item in items %}
+        <tr>
+            {% if item.done %}
+                <td><strike>{{ item.name }}</strike></td>
+            {% else %}
+                <td>{{ item.name }}</td>
+            {% endif %}
+        </tr>
+        {% empty %}
+        <td>Toy have bothing to do</td>
+        {%endfor%}
+    </table>
 </body>
 </html>
