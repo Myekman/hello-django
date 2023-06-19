@@ -31,7 +31,7 @@ SECRET_KEY = 'deveoping_key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-myekman-hellodjango-sl24jjmgxji.ws-eu100.gitpod.io']
+ALLOWED_HOSTS = ['8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
 # Application definition
 
 INSTALLED_APPS = [
