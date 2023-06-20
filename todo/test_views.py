@@ -2,17 +2,24 @@ from django.test import TestCase
 
 # Create your tests here.
 
-class TestDjango(TestCase):
+class TestViews(TestCase):
 
-    def test_this_thing_works(self):
-        self.assertEqual(1, 1)
+    def test_get_todo_list(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'todo/todo_list.html')
 
-    def test_this_thing_works2(self):
-        self.assertEqual(1, 1)
+        # run test : python3 manage.py test todo.test.views
 
-    def test_this_thing_works3(self):
-        self.assertEqual(1, 1)
+     def test_get_edit_item_page(self):
+        response = self.client.get('/add')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'todo/add_item.html')
 
-    def test_this_thing_works4(self):
-        self.assertEqual(1, 1)
+
+    #  def test_get_todo_list(self):
+
+    #  def test_get_todo_list(self):
+
+
 
