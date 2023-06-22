@@ -37,7 +37,8 @@ SECRET_KEY = 'deveoping_key'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
+# ALLOWED_HOSTS = ['8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 # Application definition
 
