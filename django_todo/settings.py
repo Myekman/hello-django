@@ -14,7 +14,7 @@ from pathlib import Path
 import dj_database_url
 import os
 
-# development = os.environ.get('DEVELOPMENT', False)
+development = os.environ.get('DEVELOPMENT', True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,10 +35,17 @@ SECRET_KEY = 'deveoping_key'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = development
 
+# if development:
+#     ALLOWED_HOSTS = ['localhost']
+# else:
+#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
+# IF I USE ALLOW HOST BELOW IT WORKS
 # ALLOWED_HOSTS = ['8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
+ALLOWED_HOSTS = ['127.0.0.1', '8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
 
 # Application definition
 
@@ -69,6 +76,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates'],
+        # 'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,10 +96,17 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': 
-    dj_database_url.parse(os.environ.get('DATABASE_URL'))
-}
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 
 
