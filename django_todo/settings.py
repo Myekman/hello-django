@@ -45,7 +45,7 @@ DEBUG = development
 # IF I USE ALLOW HOST BELOW IT WORKS
 # ALLOWED_HOSTS = ['8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
 
-ALLOWED_HOSTS = ['127.0.0.1', '8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
+ALLOWED_HOSTS = ['127.0.0.1', 'mammamia-django-todo-app-d222c9c52509.herokuapp.com']
 
 # Application definition
 
