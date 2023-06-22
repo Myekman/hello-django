@@ -37,15 +37,7 @@ SECRET_KEY = 'deveoping_key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-# if development:
-#     ALLOWED_HOSTS = ['localhost']
-# else:
-#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-
-# IF I USE ALLOW HOST BELOW IT WORKS
-# ALLOWED_HOSTS = ['8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io']
-
-ALLOWED_HOSTS = ['127.0.0.1', 'mammamia-django-todo-app-d222c9c52509.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '8000-myekman-hellodjango-pcwshj3sioo.ws-eu100.gitpod.io', 'mammamia-django-todo-app-d222c9c52509.herokuapp.com']
 
 # Application definition
 
